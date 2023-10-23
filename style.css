@@ -1,0 +1,14 @@
+body {
+    margin: 20px;
+}
+
+input, select, button {
+    font-family: Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+#notifyButton {
+    background-color: rgb(16, 115, 245);
+    border-color: blue;
+    border-radius: 1.3125rem;
+}
