@@ -1,8 +1,10 @@
 self.addEventListener("push", function (event) {
     const options = {
-      body: event.data.text(),
+      body: "My first notification on iOS",
     };
+  
     event.waitUntil(
-      self.registration.showNotification("Push Notification", options)
+      self.registration.showNotification("Hello World", options)
     );
   });
+  
