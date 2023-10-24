@@ -14,8 +14,8 @@ async function run() {
             const delayInSeconds = parseInt(document.getElementById("delayInput").value);
 
             setTimeout(async () => {
-                await registration.showNotification("Hello World!", {
-                    body: "My first iOS notification!",
+                await registration.showNotification("SCRIPT!", {
+                    body: "SCRIPT",
                     icon: "favicon.ico",
                 });
             }, delayInSeconds * 1000);
