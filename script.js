@@ -7,19 +7,20 @@ async function run() {
     );
 
     const button = document.getElementById("notify");
-    button.addEventListener("click" , async () => {
+    button.addEventListener("click", async () => {
         const result = await window.Notification.requestPermission();
 
         if (result === "granted") {
+            const delayInSeconds = parseInt(document.getElementById("delayInput").value);
 
-
-
-            await registration.showNotification("Hello World!", {
-                body: "My first iOS notification!",
-                icon: "favicon.ico",
-            })
+            setTimeout(async () => {
+                await registration.showNotification("Hello World!", {
+                    body: "My first iOS notification!",
+                    icon: "favicon.ico",
+                });
+            }, delayInSeconds * 1000);
         }
-    })
+    });
 }
 
 run();
