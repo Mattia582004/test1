@@ -12,12 +12,19 @@ async function run() {
 
         if (result === "granted") {
             const delayInSeconds = parseInt(document.getElementById("delayInput").value);
+            const customTitle = document.getElementById("customTitle").value; // Otteniamo il titolo personalizzato
+            const customMessage = document.getElementById("customMessage").value; // Otteniamo il messaggio personalizzato
 
             setTimeout(async () => {
-                await registration.showNotification("SCRIPT!", {
-                    body: "SCRIPT",
+                const notificationOptions = {
+                    body: customMessage || "My first iOS notification!",
                     icon: "favicon.ico",
-                });
+                };
+                if (customTitle) {
+                    notificationOptions.title = customTitle; // Impostiamo il titolo personalizzato
+                }
+
+                await registration.showNotification(customTitle, notificationOptions);
             }, delayInSeconds * 1000);
         }
     });
